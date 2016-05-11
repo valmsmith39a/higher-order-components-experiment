@@ -1,9 +1,9 @@
 import React from 'react';
-import Increment from './increment.js';
+import { Increment } from './increment.js';
 
 class DisplayComponent extends React.Component {
   render(){
-    return('hello from display component');
+    return(<div>Hello from display component</div>);
   }
 }
 

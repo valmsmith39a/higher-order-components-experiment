@@ -1,5 +1,5 @@
 import React from 'react';
-import IncrementHOC from './increment.js';
+import IncrementHOC from './incrementHOC.js';
 
 export default class App extends React.Component {
   render() {
