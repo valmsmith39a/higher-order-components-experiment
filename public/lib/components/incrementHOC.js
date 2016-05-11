@@ -2,11 +2,18 @@ import React from 'react';
 import { Increment } from './increment.js';
 
 class DisplayComponent extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  handleClick() {
+    this.props.incrementCounter();
+  }
+
   render(){
-    if(!this.counter) return (<div>Waiting for counter...</div>);
     return(
       <div>
-        Hello from display component
+        <button onClick={this.handleClick.bind(this)}> Increment: {this.props.counter}</button>
         {this.counter}
       </div>
     );

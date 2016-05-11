@@ -3,16 +3,17 @@ import React from 'react';
 export var Increment = DisplayComponent => class extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { counter: 'counter default is 0' };
+    this.state = { counter: 0 };
   }
-  componentDidMount() {
-    this.setState({ counter: 'increment counter' });
+
+  incrementCounter() {
+    this.setState({ counter: this.state.counter + 1 });
   }
+
   render() {
     return(
       <div>
-        Hello from Increment Component
-        <DisplayComponent {...this.props} counter={this.state.counter}/>
+        <DisplayComponent {...this.props} counter={this.state.counter} incrementCounter={this.incrementCounter.bind(this)} />
       </div>
     );
   }
