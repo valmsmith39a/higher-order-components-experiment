@@ -1,6 +1,6 @@
 import React from 'react';
 
-export var Increment = DisplayComponent => class extends React.Component {
+export var Increment = ComposedComponent => class extends React.Component {
   constructor(props) {
     super(props);
     this.state = { counter: 0 };
@@ -13,7 +13,7 @@ export var Increment = DisplayComponent => class extends React.Component {
   render() {
     return(
       <div>
-        <DisplayComponent {...this.props} counter={this.state.counter} incrementCounter={this.incrementCounter.bind(this)} />
+        <ComposedComponent counter={this.state.counter} incrementCounter={this.incrementCounter.bind(this)} />
       </div>
     );
   }
