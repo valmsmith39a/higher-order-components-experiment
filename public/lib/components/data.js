@@ -1,16 +1,21 @@
 import React from 'react';
 
-export var data = (ComposedComponent) => class extends React.Component {
-  constructor() {
-    this.state = { data: null };
+export var Data = (ComposedComponent) => class extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { data:'whoa' };
   }
 
   componentDidMount() {
     this.setState({data:'hello from dataHOC'})
   }
-  
+
+  greeting() {
+    console.log('hello George');
+  }
+
   render() {
     // <Component Increment={this.increment.bind(this)} />
-    return <ComposedComponent {...this.props} {...this.state} />
+    return <ComposedComponent {...this.props} greeting={this.greeting.bind(this)}/>
   }
 }

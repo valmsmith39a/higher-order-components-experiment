@@ -13,7 +13,7 @@ export var Increment = ComposedComponent => class extends React.Component {
   render() {
     return(
       <div>
-        <ComposedComponent counter={this.state.counter} incrementCounter={this.incrementCounter.bind(this)} />
+        <ComposedComponent {...props} counter={this.state.counter} incrementCounter={this.incrementCounter.bind(this)} />
       </div>
     );
   }
