@@ -4,13 +4,17 @@ import { IncrementEnhancerHOC } from './IncrementEnhancerHOC';
 class DisplayIncrement extends React.Component {
   constructor(props) {
     super(props)
-    console.log('this.props: ', this.props.counter)
+  }
+
+  handleClick() {
+    this.props.incrementCounter()
   }
 
   render() {
     return(
       <div>
-        DisplayIncrement
+        Display Increment Button and Counter
+        <p><button onClick={this.handleClick.bind(this)}>Increment</button></p>
         <p>{this.props.counter}</p>
       </div>
     )
@@ -18,18 +22,3 @@ class DisplayIncrement extends React.Component {
 }
 
 export default IncrementEnhancerHOC(DisplayIncrement)
-// class DisplayIncrement extends React.Component {
-//   constructor(props) {
-//     super(props)
-//     console.log('in display increment')
-//   }
-//   render() {
-//     return(
-//       <div>
-//         Hello from Display Increment Component
-//       </div>
-//     )
-//   }
-// }
-
-// export default IncrementEnhancerHOC()
