@@ -3,15 +3,13 @@ import React from 'react';
 export const dataHOC = (ComposedComponent) => class extends React.Component {
   constructor(props) {
     super(props)
-    console.log('props in dataHOC', this.props);
     this.state = {
       data: 'some data',
-      someFunction: function() { console.log('hello world') }
+      someFunction: this.someFunction.bind(this)
     }
-    var someObject = {};
   }
-
-  function someFunction() {
+  
+  someFunction() {
     console.log('hello i am some function');
   }
 

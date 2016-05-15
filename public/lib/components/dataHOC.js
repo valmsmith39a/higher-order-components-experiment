@@ -17,6 +17,7 @@ class DisplayData extends React.Component {
       <div>
         Hello from Display Data
         <p>Data is: {this.props.data}</p>
+        {this.props.someFunction()}
       </div>
     )
   }
