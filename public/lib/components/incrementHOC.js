@@ -7,7 +7,7 @@ class DisplayComponent extends React.Component {
   }
 
   handleClick() {
-    this.props.incrementCounter();
+    this.props.incrementCounterFunction();
   }
 
   render(){
