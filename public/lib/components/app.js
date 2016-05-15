@@ -6,7 +6,7 @@ export default class App extends React.Component {
   render() {
     return(
       <div>
-        <DisplayIncrementEnhanced />
+        <DisplayIncrementEnhanced startMessage={'Start counting!'}/>
       </div>
     )
   }
