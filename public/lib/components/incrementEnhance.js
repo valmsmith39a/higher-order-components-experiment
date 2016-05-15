@@ -4,7 +4,6 @@ import { IncrementEnhancerHOC } from './IncrementEnhancerHOC';
 class DisplayIncrement extends React.Component {
   constructor(props) {
     super(props)
-    console.log('props in DisplayIncrement: ', this.props);
   }
 
   handleClick() {
