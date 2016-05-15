@@ -1,34 +1,73 @@
-// import { Enhance } from "./Enhance";
-//
-// class MyComponent {
-//   render() {
-//     if (!this.data) return <div>Waiting...</div>;
-//     return <div>{this.data}</div>;
-//   }
-// }
-//
-// export default Enhance(MyComponent); // Enhanced component
+/*
 
+We want to give DisplayData component access to other functionality in dataHOC function (a higher order component - a function that takes or returns another component) in data.js, by wrapping DisplayData in another component - the component returned by the function dataHOC.
+
+*/
 
 import React from 'react';
-import { Data } from './data';
+import { dataHOC } from './data';
 
 class DisplayData extends React.Component {
   constructor(props) {
-    super(props);
-    console.log('state is: ', this.state);
-    console.log('props is: ', this.props);
+    super(props)
+    console.log('Display data props is: ', this.props);
   }
-  // want DisplayData to be able to access something inside data.js
-
   render() {
     return(
       <div>
-        hello from display data:
-        
+        Hello from Display Data
+        <p>Data is: {this.props.data}</p>
       </div>
     )
   }
 }
 
-export default Data(DisplayData);
+export default dataHOC(DisplayData);
+
+
+
+
+
+// // import { data } from "./Enhance";
+// //
+// // class MyComponent {
+// //   render() {
+// //     if (!this.data) return <div>Waiting...</div>;
+// //     return <div>{this.data}</div>;
+// //   }
+// // }
+// //
+// // export default Enhance(MyComponent); // Enhanced component
+//
+//
+// import React from 'react';
+// import { Data } from './data';
+//
+// class DisplayData extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     console.log('state is: ', this.state);
+//   }
+//
+//   render() {
+//     return(
+//       <div>
+//         hello from display data:
+//       </div>
+//     )
+//   }
+// }
+//
+// export default Data(DisplayData);
+//
+// import React from 'react';
+// import { HOC } from "./data";
+//
+// class MyComponent extends React.Component {
+//   render() {
+//     // if (!this.data) return <div>Waiting...</div>;
+//     return <div>{this.data}</div>;
+//   }
+// }
+//
+// export default HOC(MyComponent); // Enhanced component

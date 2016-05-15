@@ -7,7 +7,7 @@ export default class App extends React.Component {
     return(
       <div>
         <IncrementHOC />
-        <DataHOC />
+        <DataHOC initialProps={'initial props'} />
       </div>
     )
   }
