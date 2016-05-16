@@ -7,7 +7,7 @@ export default class App extends React.Component {
     return(
       <div>
         <DisplayIncrementEnhanced startMessage={'Start counting!'} />
-        <CounterWithPropsValidationEx initialCounter={5} />
+        <CounterWithPropsValidationEx initialGreeting={'This is counter example with props validation!'} initialCounter={5} />
       </div>
     )
   }

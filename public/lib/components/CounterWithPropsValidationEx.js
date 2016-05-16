@@ -16,6 +16,7 @@ export default class CounterWithPropsValidationEx extends React.Component {
     return(
       <div>
         <p>Hello from Props Validation Ex</p>
+        <p>{this.props.initialGreeting}</p>
         <button onClick={this.increment}> IncrementBtn </button>
         <p>{this.state.counter}</p>
       </div>
@@ -23,4 +24,7 @@ export default class CounterWithPropsValidationEx extends React.Component {
   }
 }
 
-CounterWithPropsValidationEx.propTypes = { initialCounter: React.PropTypes.number.isRequired }
+CounterWithPropsValidationEx.propTypes = {
+  initialCounter: React.PropTypes.number.isRequired,
+  initialGreeting: React.PropTypes.string.isRequired
+ }
