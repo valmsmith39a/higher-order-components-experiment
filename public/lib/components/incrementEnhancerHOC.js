@@ -1,5 +1,4 @@
 import React from 'react';
-
 export var IncrementEnhancerHOC = (ComposedComponent) => class extends React.Component {
   constructor(props) {
     super(props)
