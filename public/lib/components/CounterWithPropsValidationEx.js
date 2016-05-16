@@ -4,7 +4,7 @@ export default class CounterWithPropsValidationEx extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = { counter: props.initalCounter }
+    this.state = { counter: props.initialCounter }
     this.increment = this.increment.bind(this)
   }
 
@@ -23,4 +23,4 @@ export default class CounterWithPropsValidationEx extends React.Component {
   }
 }
 
-CounterWithPropsValidationEx.propTypes = { initialCounter: React.PropTypes.number.required }
+CounterWithPropsValidationEx.propTypes = { initialCounter: React.PropTypes.number.isRequired }
