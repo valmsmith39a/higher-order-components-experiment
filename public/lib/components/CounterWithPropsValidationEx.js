@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class CounterWithPropsValidataionEx extends React.Component {
+export default class CounterWithPropsValidationEx extends React.Component {
 
   constructor(props) {
     super(props)
@@ -22,3 +22,5 @@ export default class CounterWithPropsValidataionEx extends React.Component {
     )
   }
 }
+
+CounterWithPropsValidationEx.propTypes = { initialCounter: React.PropTypes.number.required }
