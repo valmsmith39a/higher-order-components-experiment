@@ -17,6 +17,7 @@ export default class CounterWithPropsValidationEx extends React.Component {
       <div>
         <p>Hello from Props Validation Ex</p>
         <p>{this.props.initialGreeting}</p>
+        <p>Name: {this.props.name}</p>
         <button onClick={this.increment}> IncrementBtn </button>
         <p>{this.state.counter}</p>
       </div>
@@ -26,7 +27,15 @@ export default class CounterWithPropsValidationEx extends React.Component {
 
 CounterWithPropsValidationEx.propTypes = {
   initialCounter: React.PropTypes.number.isRequired,
-  initialGreeting: React.PropTypes.string.isRequired
+  initialGreeting: React.PropTypes.string.isRequired,
+  name: function(props, propName, componentName) {
+    if (!/George/.test(props[propName])) {
+        return new Error(
+          'Invalid prop `' + propName + '` supplied to' +
+          ' `' + componentName + '`. Validation failed.'
+        );
+      }
+  }
 }
 
 /*
