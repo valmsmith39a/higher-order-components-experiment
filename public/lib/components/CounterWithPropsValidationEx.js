@@ -27,4 +27,10 @@ export default class CounterWithPropsValidationEx extends React.Component {
 CounterWithPropsValidationEx.propTypes = {
   initialCounter: React.PropTypes.number.isRequired,
   initialGreeting: React.PropTypes.string.isRequired
- }
+}
+
+/*
+  If initialCounter is not passed as props then initialCounter will default to 1. If passed as props, then will override default value. No error
+  message displays if required props not passed into component
+*/
+CounterWithPropsValidationEx.defaultProps = { initialCounter: 1 }
